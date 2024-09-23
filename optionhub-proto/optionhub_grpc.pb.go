@@ -19,6 +19,7 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
+	OptionhubService_GetOsBySearchName_FullMethodName    = "/OptionhubService/GetOsBySearchName"
 	OptionhubService_GetOsById_FullMethodName            = "/OptionhubService/GetOsById"
 	OptionhubService_GetAllOs_FullMethodName             = "/OptionhubService/GetAllOs"
 	OptionhubService_AddOs_FullMethodName                = "/OptionhubService/AddOs"
@@ -55,6 +56,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OptionhubServiceClient interface {
+	GetOsBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error)
 	GetOsById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error)
 	GetAllOs(ctx context.Context, in *GetAllIn, opts ...grpc.CallOption) (*GetAllOut, error)
 	AddOs(ctx context.Context, in *AddIn, opts ...grpc.CallOption) (*AddOut, error)
@@ -93,6 +95,16 @@ type optionhubServiceClient struct {
 
 func NewOptionhubServiceClient(cc grpc.ClientConnInterface) OptionhubServiceClient {
 	return &optionhubServiceClient{cc}
+}
+
+func (c *optionhubServiceClient) GetOsBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(GetByNameOut)
+	err := c.cc.Invoke(ctx, OptionhubService_GetOsBySearchName_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
 }
 
 func (c *optionhubServiceClient) GetOsById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error) {
@@ -399,6 +411,7 @@ func (c *optionhubServiceClient) DeleteCityById(ctx context.Context, in *DeleteB
 // All implementations must embed UnimplementedOptionhubServiceServer
 // for forward compatibility.
 type OptionhubServiceServer interface {
+	GetOsBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error)
 	GetOsById(context.Context, *GetByIdIn) (*GetByIdOut, error)
 	GetAllOs(context.Context, *GetAllIn) (*GetAllOut, error)
 	AddOs(context.Context, *AddIn) (*AddOut, error)
@@ -439,6 +452,9 @@ type OptionhubServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedOptionhubServiceServer struct{}
 
+func (UnimplementedOptionhubServiceServer) GetOsBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetOsBySearchName not implemented")
+}
 func (UnimplementedOptionhubServiceServer) GetOsById(context.Context, *GetByIdIn) (*GetByIdOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOsById not implemented")
 }
@@ -548,6 +564,24 @@ func RegisterOptionhubServiceServer(s grpc.ServiceRegistrar, srv OptionhubServic
 		t.testEmbeddedByValue()
 	}
 	s.RegisterService(&OptionhubService_ServiceDesc, srv)
+}
+
+func _OptionhubService_GetOsBySearchName_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetByNameIn)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OptionhubServiceServer).GetOsBySearchName(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: OptionhubService_GetOsBySearchName_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OptionhubServiceServer).GetOsBySearchName(ctx, req.(*GetByNameIn))
+	}
+	return interceptor(ctx, in, info, handler)
 }
 
 func _OptionhubService_GetOsById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -1097,6 +1131,10 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 	ServiceName: "OptionhubService",
 	HandlerType: (*OptionhubServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "GetOsBySearchName",
+			Handler:    _OptionhubService_GetOsBySearchName_Handler,
+		},
 		{
 			MethodName: "GetOsById",
 			Handler:    _OptionhubService_GetOsById_Handler,
