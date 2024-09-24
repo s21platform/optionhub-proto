@@ -12,6 +12,8 @@
     - [GetAllOut](#-GetAllOut)
     - [GetByIdIn](#-GetByIdIn)
     - [GetByIdOut](#-GetByIdOut)
+    - [GetByNameIn](#-GetByNameIn)
+    - [GetByNameOut](#-GetByNameOut)
     - [SetByIdIn](#-SetByIdIn)
     - [SetByIdOut](#-SetByIdOut)
   
@@ -145,6 +147,37 @@ message response
 
 
 
+<a name="-GetByNameIn"></a>
+
+### GetByNameIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| name | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="-GetByNameOut"></a>
+
+### GetByNameOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| id | [int64](#int64) |  |  |
+| value | [string](#string) |  |  |
+
+
+
+
+
+
 <a name="-SetByIdIn"></a>
 
 ### SetByIdIn
@@ -189,6 +222,7 @@ message response
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
+| GetOsBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
 | GetOsById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | GetAllOs | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
 | AddOs | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
