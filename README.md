@@ -14,6 +14,7 @@
     - [GetByIdOut](#-GetByIdOut)
     - [GetByNameIn](#-GetByNameIn)
     - [GetByNameOut](#-GetByNameOut)
+    - [Record](#-Record)
     - [SetByIdIn](#-SetByIdIn)
     - [SetByIdOut](#-SetByIdOut)
   
@@ -109,7 +110,7 @@ message response for all active values
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| items | [GetByIdOut](#GetByIdOut) | repeated |  |
+| values | [Record](#Record) | repeated |  |
 
 
 
@@ -165,6 +166,21 @@ message response
 <a name="-GetByNameOut"></a>
 
 ### GetByNameOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| values | [Record](#Record) | repeated |  |
+
+
+
+
+
+
+<a name="-Record"></a>
+
+### Record
 
 
 
