@@ -239,36 +239,11 @@ message response
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | GetOsBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetOsById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| GetOsByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | GetAllOs | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
 | AddOs | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
-| SetOsById | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
-| DeleteOsById | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
-| GetWorkPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
-| GetAllWorkPlace | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
-| AddWorkPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
-| SetWorkPlaceById | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
-| DeleteWorkPlaceById | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
-| GetStudyPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
-| GetAllStudyPlace | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
-| AddStudyPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
-| SetStudyPlaceById | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
-| DeleteStudyPlaceById | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
-| GetHobbyById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
-| GetHobbyPlace | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
-| AddHobby | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
-| SetHobbyById | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
-| DeleteHobbyById | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
-| GetSkillById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
-| GetSkillPlace | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
-| AddSkill | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
-| SetSkillById | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
-| DeleteSkillById | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
-| GetCityById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
-| GetCityPlace | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
-| AddCity | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
-| SetCityById | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
-| DeleteCityById | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
+| SetOsByID | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
+| DeleteOsByID | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
 
  
 
