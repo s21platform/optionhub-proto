@@ -13,7 +13,7 @@ service OptionhubService {
 
 message Record {
   int64 id = 1;
-  string value = 2;
+  string name = 2;
 }
 
 message GetByNameIn {
@@ -26,7 +26,7 @@ message GetByNameOut {
 
 //message request
 message GetByIdIn {
-  //user's id
+  // id of the row in the db
   int64 id = 1;
 }
 

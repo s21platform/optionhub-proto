@@ -125,7 +125,7 @@ message request
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int64](#int64) |  | user&#39;s id |
+| id | [int64](#int64) |  | id of the row in the db |
 
 
 
@@ -187,7 +187,7 @@ message response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
-| value | [string](#string) |  |  |
+| name | [string](#string) |  |  |
 
 
 
