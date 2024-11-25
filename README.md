@@ -8,7 +8,7 @@
     - [AddOut](#-AddOut)
     - [DeleteByIdIn](#-DeleteByIdIn)
     - [DeleteByIdOut](#-DeleteByIdOut)
-    - [GetAllIn](#-GetAllIn)
+    - [EmptyOptionhub](#-EmptyOptionhub)
     - [GetAllOut](#-GetAllOut)
     - [GetByIdIn](#-GetByIdIn)
     - [GetByIdOut](#-GetByIdOut)
@@ -92,9 +92,9 @@ message response
 
 
 
-<a name="-GetAllIn"></a>
+<a name="-EmptyOptionhub"></a>
 
-### GetAllIn
+### EmptyOptionhub
 
 
 
@@ -240,10 +240,25 @@ message response
 | ----------- | ------------ | ------------- | ------------|
 | GetOsBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
 | GetOsByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
-| GetAllOs | [.GetAllIn](#GetAllIn) | [.GetAllOut](#GetAllOut) |  |
+| GetAllOs | [.EmptyOptionhub](#EmptyOptionhub) | [.GetAllOut](#GetAllOut) |  |
 | AddOs | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | SetOsByID | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
 | DeleteOsByID | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
+| GetWorkPlaceBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
+| GetWorkPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| AddWorkPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
+| GetStudyPlaceBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
+| GetStudyPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| AddStudyPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
+| GetHobbyBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
+| GetHobbyById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| AddHobby | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
+| GetSkillBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
+| GetSkillById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| AddSkill | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
+| GetCityBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
+| GetCityById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| AddCity | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 
  
 
