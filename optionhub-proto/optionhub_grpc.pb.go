@@ -20,30 +20,24 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	OptionhubService_GetOsBySearchName_FullMethodName         = "/OptionhubService/GetOsBySearchName"
-	OptionhubService_GetOsPreview_FullMethodName              = "/OptionhubService/GetOsPreview"
 	OptionhubService_GetOsByID_FullMethodName                 = "/OptionhubService/GetOsByID"
 	OptionhubService_GetAllOs_FullMethodName                  = "/OptionhubService/GetAllOs"
 	OptionhubService_AddOs_FullMethodName                     = "/OptionhubService/AddOs"
 	OptionhubService_SetOsByID_FullMethodName                 = "/OptionhubService/SetOsByID"
 	OptionhubService_DeleteOsByID_FullMethodName              = "/OptionhubService/DeleteOsByID"
 	OptionhubService_GetWorkPlaceBySearchName_FullMethodName  = "/OptionhubService/GetWorkPlaceBySearchName"
-	OptionhubService_GetWorkPlacePreview_FullMethodName       = "/OptionhubService/GetWorkPlacePreview"
 	OptionhubService_GetWorkPlaceById_FullMethodName          = "/OptionhubService/GetWorkPlaceById"
 	OptionhubService_AddWorkPlace_FullMethodName              = "/OptionhubService/AddWorkPlace"
 	OptionhubService_GetStudyPlaceBySearchName_FullMethodName = "/OptionhubService/GetStudyPlaceBySearchName"
-	OptionhubService_GetStudyPlacePreview_FullMethodName      = "/OptionhubService/GetStudyPlacePreview"
 	OptionhubService_GetStudyPlaceById_FullMethodName         = "/OptionhubService/GetStudyPlaceById"
 	OptionhubService_AddStudyPlace_FullMethodName             = "/OptionhubService/AddStudyPlace"
 	OptionhubService_GetHobbyBySearchName_FullMethodName      = "/OptionhubService/GetHobbyBySearchName"
-	OptionhubService_GetHobbyPreview_FullMethodName           = "/OptionhubService/GetHobbyPreview"
 	OptionhubService_GetHobbyById_FullMethodName              = "/OptionhubService/GetHobbyById"
 	OptionhubService_AddHobby_FullMethodName                  = "/OptionhubService/AddHobby"
 	OptionhubService_GetSkillBySearchName_FullMethodName      = "/OptionhubService/GetSkillBySearchName"
-	OptionhubService_GetSkillPreview_FullMethodName           = "/OptionhubService/GetSkillPreview"
 	OptionhubService_GetSkillById_FullMethodName              = "/OptionhubService/GetSkillById"
 	OptionhubService_AddSkill_FullMethodName                  = "/OptionhubService/AddSkill"
 	OptionhubService_GetCityBySearchName_FullMethodName       = "/OptionhubService/GetCityBySearchName"
-	OptionhubService_GetCityPreview_FullMethodName            = "/OptionhubService/GetCityPreview"
 	OptionhubService_GetCityById_FullMethodName               = "/OptionhubService/GetCityById"
 	OptionhubService_AddCity_FullMethodName                   = "/OptionhubService/AddCity"
 )
@@ -53,30 +47,24 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OptionhubServiceClient interface {
 	GetOsBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error)
-	GetOsPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error)
 	GetOsByID(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error)
-	GetAllOs(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetAllOut, error)
+	GetAllOs(ctx context.Context, in *EmptyOptionhub, opts ...grpc.CallOption) (*GetAllOut, error)
 	AddOs(ctx context.Context, in *AddIn, opts ...grpc.CallOption) (*AddOut, error)
 	SetOsByID(ctx context.Context, in *SetByIdIn, opts ...grpc.CallOption) (*SetByIdOut, error)
 	DeleteOsByID(ctx context.Context, in *DeleteByIdIn, opts ...grpc.CallOption) (*DeleteByIdOut, error)
 	GetWorkPlaceBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error)
-	GetWorkPlacePreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error)
 	GetWorkPlaceById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error)
 	AddWorkPlace(ctx context.Context, in *AddIn, opts ...grpc.CallOption) (*AddOut, error)
 	GetStudyPlaceBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error)
-	GetStudyPlacePreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error)
 	GetStudyPlaceById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error)
 	AddStudyPlace(ctx context.Context, in *AddIn, opts ...grpc.CallOption) (*AddOut, error)
 	GetHobbyBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error)
-	GetHobbyPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error)
 	GetHobbyById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error)
 	AddHobby(ctx context.Context, in *AddIn, opts ...grpc.CallOption) (*AddOut, error)
 	GetSkillBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error)
-	GetSkillPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error)
 	GetSkillById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error)
 	AddSkill(ctx context.Context, in *AddIn, opts ...grpc.CallOption) (*AddOut, error)
 	GetCityBySearchName(ctx context.Context, in *GetByNameIn, opts ...grpc.CallOption) (*GetByNameOut, error)
-	GetCityPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error)
 	GetCityById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error)
 	AddCity(ctx context.Context, in *AddIn, opts ...grpc.CallOption) (*AddOut, error)
 }
@@ -99,16 +87,6 @@ func (c *optionhubServiceClient) GetOsBySearchName(ctx context.Context, in *GetB
 	return out, nil
 }
 
-func (c *optionhubServiceClient) GetOsPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPreviewOut)
-	err := c.cc.Invoke(ctx, OptionhubService_GetOsPreview_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *optionhubServiceClient) GetOsByID(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetByIdOut)
@@ -119,7 +97,7 @@ func (c *optionhubServiceClient) GetOsByID(ctx context.Context, in *GetByIdIn, o
 	return out, nil
 }
 
-func (c *optionhubServiceClient) GetAllOs(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetAllOut, error) {
+func (c *optionhubServiceClient) GetAllOs(ctx context.Context, in *EmptyOptionhub, opts ...grpc.CallOption) (*GetAllOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetAllOut)
 	err := c.cc.Invoke(ctx, OptionhubService_GetAllOs_FullMethodName, in, out, cOpts...)
@@ -169,16 +147,6 @@ func (c *optionhubServiceClient) GetWorkPlaceBySearchName(ctx context.Context, i
 	return out, nil
 }
 
-func (c *optionhubServiceClient) GetWorkPlacePreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPreviewOut)
-	err := c.cc.Invoke(ctx, OptionhubService_GetWorkPlacePreview_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *optionhubServiceClient) GetWorkPlaceById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetByIdOut)
@@ -203,16 +171,6 @@ func (c *optionhubServiceClient) GetStudyPlaceBySearchName(ctx context.Context, 
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetByNameOut)
 	err := c.cc.Invoke(ctx, OptionhubService_GetStudyPlaceBySearchName_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *optionhubServiceClient) GetStudyPlacePreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPreviewOut)
-	err := c.cc.Invoke(ctx, OptionhubService_GetStudyPlacePreview_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -249,16 +207,6 @@ func (c *optionhubServiceClient) GetHobbyBySearchName(ctx context.Context, in *G
 	return out, nil
 }
 
-func (c *optionhubServiceClient) GetHobbyPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPreviewOut)
-	err := c.cc.Invoke(ctx, OptionhubService_GetHobbyPreview_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *optionhubServiceClient) GetHobbyById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetByIdOut)
@@ -283,16 +231,6 @@ func (c *optionhubServiceClient) GetSkillBySearchName(ctx context.Context, in *G
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetByNameOut)
 	err := c.cc.Invoke(ctx, OptionhubService_GetSkillBySearchName_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *optionhubServiceClient) GetSkillPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPreviewOut)
-	err := c.cc.Invoke(ctx, OptionhubService_GetSkillPreview_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -329,16 +267,6 @@ func (c *optionhubServiceClient) GetCityBySearchName(ctx context.Context, in *Ge
 	return out, nil
 }
 
-func (c *optionhubServiceClient) GetCityPreview(ctx context.Context, in *Empty, opts ...grpc.CallOption) (*GetPreviewOut, error) {
-	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(GetPreviewOut)
-	err := c.cc.Invoke(ctx, OptionhubService_GetCityPreview_FullMethodName, in, out, cOpts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *optionhubServiceClient) GetCityById(ctx context.Context, in *GetByIdIn, opts ...grpc.CallOption) (*GetByIdOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetByIdOut)
@@ -364,30 +292,24 @@ func (c *optionhubServiceClient) AddCity(ctx context.Context, in *AddIn, opts ..
 // for forward compatibility.
 type OptionhubServiceServer interface {
 	GetOsBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error)
-	GetOsPreview(context.Context, *Empty) (*GetPreviewOut, error)
 	GetOsByID(context.Context, *GetByIdIn) (*GetByIdOut, error)
-	GetAllOs(context.Context, *Empty) (*GetAllOut, error)
+	GetAllOs(context.Context, *EmptyOptionhub) (*GetAllOut, error)
 	AddOs(context.Context, *AddIn) (*AddOut, error)
 	SetOsByID(context.Context, *SetByIdIn) (*SetByIdOut, error)
 	DeleteOsByID(context.Context, *DeleteByIdIn) (*DeleteByIdOut, error)
 	GetWorkPlaceBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error)
-	GetWorkPlacePreview(context.Context, *Empty) (*GetPreviewOut, error)
 	GetWorkPlaceById(context.Context, *GetByIdIn) (*GetByIdOut, error)
 	AddWorkPlace(context.Context, *AddIn) (*AddOut, error)
 	GetStudyPlaceBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error)
-	GetStudyPlacePreview(context.Context, *Empty) (*GetPreviewOut, error)
 	GetStudyPlaceById(context.Context, *GetByIdIn) (*GetByIdOut, error)
 	AddStudyPlace(context.Context, *AddIn) (*AddOut, error)
 	GetHobbyBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error)
-	GetHobbyPreview(context.Context, *Empty) (*GetPreviewOut, error)
 	GetHobbyById(context.Context, *GetByIdIn) (*GetByIdOut, error)
 	AddHobby(context.Context, *AddIn) (*AddOut, error)
 	GetSkillBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error)
-	GetSkillPreview(context.Context, *Empty) (*GetPreviewOut, error)
 	GetSkillById(context.Context, *GetByIdIn) (*GetByIdOut, error)
 	AddSkill(context.Context, *AddIn) (*AddOut, error)
 	GetCityBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error)
-	GetCityPreview(context.Context, *Empty) (*GetPreviewOut, error)
 	GetCityById(context.Context, *GetByIdIn) (*GetByIdOut, error)
 	AddCity(context.Context, *AddIn) (*AddOut, error)
 	mustEmbedUnimplementedOptionhubServiceServer()
@@ -403,13 +325,10 @@ type UnimplementedOptionhubServiceServer struct{}
 func (UnimplementedOptionhubServiceServer) GetOsBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOsBySearchName not implemented")
 }
-func (UnimplementedOptionhubServiceServer) GetOsPreview(context.Context, *Empty) (*GetPreviewOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetOsPreview not implemented")
-}
 func (UnimplementedOptionhubServiceServer) GetOsByID(context.Context, *GetByIdIn) (*GetByIdOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOsByID not implemented")
 }
-func (UnimplementedOptionhubServiceServer) GetAllOs(context.Context, *Empty) (*GetAllOut, error) {
+func (UnimplementedOptionhubServiceServer) GetAllOs(context.Context, *EmptyOptionhub) (*GetAllOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllOs not implemented")
 }
 func (UnimplementedOptionhubServiceServer) AddOs(context.Context, *AddIn) (*AddOut, error) {
@@ -424,9 +343,6 @@ func (UnimplementedOptionhubServiceServer) DeleteOsByID(context.Context, *Delete
 func (UnimplementedOptionhubServiceServer) GetWorkPlaceBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWorkPlaceBySearchName not implemented")
 }
-func (UnimplementedOptionhubServiceServer) GetWorkPlacePreview(context.Context, *Empty) (*GetPreviewOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetWorkPlacePreview not implemented")
-}
 func (UnimplementedOptionhubServiceServer) GetWorkPlaceById(context.Context, *GetByIdIn) (*GetByIdOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetWorkPlaceById not implemented")
 }
@@ -435,9 +351,6 @@ func (UnimplementedOptionhubServiceServer) AddWorkPlace(context.Context, *AddIn)
 }
 func (UnimplementedOptionhubServiceServer) GetStudyPlaceBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStudyPlaceBySearchName not implemented")
-}
-func (UnimplementedOptionhubServiceServer) GetStudyPlacePreview(context.Context, *Empty) (*GetPreviewOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetStudyPlacePreview not implemented")
 }
 func (UnimplementedOptionhubServiceServer) GetStudyPlaceById(context.Context, *GetByIdIn) (*GetByIdOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetStudyPlaceById not implemented")
@@ -448,9 +361,6 @@ func (UnimplementedOptionhubServiceServer) AddStudyPlace(context.Context, *AddIn
 func (UnimplementedOptionhubServiceServer) GetHobbyBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHobbyBySearchName not implemented")
 }
-func (UnimplementedOptionhubServiceServer) GetHobbyPreview(context.Context, *Empty) (*GetPreviewOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetHobbyPreview not implemented")
-}
 func (UnimplementedOptionhubServiceServer) GetHobbyById(context.Context, *GetByIdIn) (*GetByIdOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetHobbyById not implemented")
 }
@@ -460,9 +370,6 @@ func (UnimplementedOptionhubServiceServer) AddHobby(context.Context, *AddIn) (*A
 func (UnimplementedOptionhubServiceServer) GetSkillBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSkillBySearchName not implemented")
 }
-func (UnimplementedOptionhubServiceServer) GetSkillPreview(context.Context, *Empty) (*GetPreviewOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetSkillPreview not implemented")
-}
 func (UnimplementedOptionhubServiceServer) GetSkillById(context.Context, *GetByIdIn) (*GetByIdOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetSkillById not implemented")
 }
@@ -471,9 +378,6 @@ func (UnimplementedOptionhubServiceServer) AddSkill(context.Context, *AddIn) (*A
 }
 func (UnimplementedOptionhubServiceServer) GetCityBySearchName(context.Context, *GetByNameIn) (*GetByNameOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCityBySearchName not implemented")
-}
-func (UnimplementedOptionhubServiceServer) GetCityPreview(context.Context, *Empty) (*GetPreviewOut, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetCityPreview not implemented")
 }
 func (UnimplementedOptionhubServiceServer) GetCityById(context.Context, *GetByIdIn) (*GetByIdOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetCityById not implemented")
@@ -520,24 +424,6 @@ func _OptionhubService_GetOsBySearchName_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OptionhubService_GetOsPreview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OptionhubServiceServer).GetOsPreview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: OptionhubService_GetOsPreview_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetOsPreview(ctx, req.(*Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _OptionhubService_GetOsByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetByIdIn)
 	if err := dec(in); err != nil {
@@ -557,7 +443,7 @@ func _OptionhubService_GetOsByID_Handler(srv interface{}, ctx context.Context, d
 }
 
 func _OptionhubService_GetAllOs_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
+	in := new(EmptyOptionhub)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -569,7 +455,7 @@ func _OptionhubService_GetAllOs_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: OptionhubService_GetAllOs_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetAllOs(ctx, req.(*Empty))
+		return srv.(OptionhubServiceServer).GetAllOs(ctx, req.(*EmptyOptionhub))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -646,24 +532,6 @@ func _OptionhubService_GetWorkPlaceBySearchName_Handler(srv interface{}, ctx con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OptionhubService_GetWorkPlacePreview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OptionhubServiceServer).GetWorkPlacePreview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: OptionhubService_GetWorkPlacePreview_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetWorkPlacePreview(ctx, req.(*Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _OptionhubService_GetWorkPlaceById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetByIdIn)
 	if err := dec(in); err != nil {
@@ -714,24 +582,6 @@ func _OptionhubService_GetStudyPlaceBySearchName_Handler(srv interface{}, ctx co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OptionhubServiceServer).GetStudyPlaceBySearchName(ctx, req.(*GetByNameIn))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OptionhubService_GetStudyPlacePreview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OptionhubServiceServer).GetStudyPlacePreview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: OptionhubService_GetStudyPlacePreview_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetStudyPlacePreview(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -790,24 +640,6 @@ func _OptionhubService_GetHobbyBySearchName_Handler(srv interface{}, ctx context
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OptionhubService_GetHobbyPreview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OptionhubServiceServer).GetHobbyPreview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: OptionhubService_GetHobbyPreview_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetHobbyPreview(ctx, req.(*Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _OptionhubService_GetHobbyById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetByIdIn)
 	if err := dec(in); err != nil {
@@ -858,24 +690,6 @@ func _OptionhubService_GetSkillBySearchName_Handler(srv interface{}, ctx context
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(OptionhubServiceServer).GetSkillBySearchName(ctx, req.(*GetByNameIn))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _OptionhubService_GetSkillPreview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OptionhubServiceServer).GetSkillPreview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: OptionhubService_GetSkillPreview_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetSkillPreview(ctx, req.(*Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -934,24 +748,6 @@ func _OptionhubService_GetCityBySearchName_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OptionhubService_GetCityPreview_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Empty)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(OptionhubServiceServer).GetCityPreview(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: OptionhubService_GetCityPreview_FullMethodName,
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetCityPreview(ctx, req.(*Empty))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _OptionhubService_GetCityById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetByIdIn)
 	if err := dec(in); err != nil {
@@ -1000,10 +796,6 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _OptionhubService_GetOsBySearchName_Handler,
 		},
 		{
-			MethodName: "GetOsPreview",
-			Handler:    _OptionhubService_GetOsPreview_Handler,
-		},
-		{
 			MethodName: "GetOsByID",
 			Handler:    _OptionhubService_GetOsByID_Handler,
 		},
@@ -1028,10 +820,6 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _OptionhubService_GetWorkPlaceBySearchName_Handler,
 		},
 		{
-			MethodName: "GetWorkPlacePreview",
-			Handler:    _OptionhubService_GetWorkPlacePreview_Handler,
-		},
-		{
 			MethodName: "GetWorkPlaceById",
 			Handler:    _OptionhubService_GetWorkPlaceById_Handler,
 		},
@@ -1042,10 +830,6 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetStudyPlaceBySearchName",
 			Handler:    _OptionhubService_GetStudyPlaceBySearchName_Handler,
-		},
-		{
-			MethodName: "GetStudyPlacePreview",
-			Handler:    _OptionhubService_GetStudyPlacePreview_Handler,
 		},
 		{
 			MethodName: "GetStudyPlaceById",
@@ -1060,10 +844,6 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _OptionhubService_GetHobbyBySearchName_Handler,
 		},
 		{
-			MethodName: "GetHobbyPreview",
-			Handler:    _OptionhubService_GetHobbyPreview_Handler,
-		},
-		{
 			MethodName: "GetHobbyById",
 			Handler:    _OptionhubService_GetHobbyById_Handler,
 		},
@@ -1076,10 +856,6 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _OptionhubService_GetSkillBySearchName_Handler,
 		},
 		{
-			MethodName: "GetSkillPreview",
-			Handler:    _OptionhubService_GetSkillPreview_Handler,
-		},
-		{
 			MethodName: "GetSkillById",
 			Handler:    _OptionhubService_GetSkillById_Handler,
 		},
@@ -1090,10 +866,6 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetCityBySearchName",
 			Handler:    _OptionhubService_GetCityBySearchName_Handler,
-		},
-		{
-			MethodName: "GetCityPreview",
-			Handler:    _OptionhubService_GetCityPreview_Handler,
 		},
 		{
 			MethodName: "GetCityById",

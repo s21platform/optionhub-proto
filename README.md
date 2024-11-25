@@ -8,13 +8,12 @@
     - [AddOut](#-AddOut)
     - [DeleteByIdIn](#-DeleteByIdIn)
     - [DeleteByIdOut](#-DeleteByIdOut)
-    - [Empty](#-Empty)
+    - [EmptyOptionhub](#-EmptyOptionhub)
     - [GetAllOut](#-GetAllOut)
     - [GetByIdIn](#-GetByIdIn)
     - [GetByIdOut](#-GetByIdOut)
     - [GetByNameIn](#-GetByNameIn)
     - [GetByNameOut](#-GetByNameOut)
-    - [GetPreviewOut](#-GetPreviewOut)
     - [Record](#-Record)
     - [SetByIdIn](#-SetByIdIn)
     - [SetByIdOut](#-SetByIdOut)
@@ -93,9 +92,9 @@ message response
 
 
 
-<a name="-Empty"></a>
+<a name="-EmptyOptionhub"></a>
 
-### Empty
+### EmptyOptionhub
 
 
 
@@ -179,21 +178,6 @@ message response
 
 
 
-<a name="-GetPreviewOut"></a>
-
-### GetPreviewOut
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| values | [Record](#Record) | repeated |  |
-
-
-
-
-
-
 <a name="-Record"></a>
 
 ### Record
@@ -255,30 +239,24 @@ message response
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | GetOsBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetOsPreview | [.Empty](#Empty) | [.GetPreviewOut](#GetPreviewOut) |  |
 | GetOsByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
-| GetAllOs | [.Empty](#Empty) | [.GetAllOut](#GetAllOut) |  |
+| GetAllOs | [.EmptyOptionhub](#EmptyOptionhub) | [.GetAllOut](#GetAllOut) |  |
 | AddOs | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | SetOsByID | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
 | DeleteOsByID | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
 | GetWorkPlaceBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetWorkPlacePreview | [.Empty](#Empty) | [.GetPreviewOut](#GetPreviewOut) |  |
 | GetWorkPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddWorkPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetStudyPlaceBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetStudyPlacePreview | [.Empty](#Empty) | [.GetPreviewOut](#GetPreviewOut) |  |
 | GetStudyPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddStudyPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetHobbyBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetHobbyPreview | [.Empty](#Empty) | [.GetPreviewOut](#GetPreviewOut) |  |
 | GetHobbyById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddHobby | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetSkillBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetSkillPreview | [.Empty](#Empty) | [.GetPreviewOut](#GetPreviewOut) |  |
 | GetSkillById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddSkill | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetCityBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetCityPreview | [.Empty](#Empty) | [.GetPreviewOut](#GetPreviewOut) |  |
 | GetCityById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddCity | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 

@@ -4,40 +4,34 @@ option go_package = "./optionhub-proto";
 
 service OptionhubService {
   rpc GetOsBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetOsPreview(Empty) returns (GetPreviewOut){};
   rpc GetOsByID (GetByIdIn) returns (GetByIdOut){};
-  rpc GetAllOs (Empty) returns (GetAllOut){};
+  rpc GetAllOs (EmptyOptionhub) returns (GetAllOut){};
   rpc AddOs (AddIn) returns (AddOut){};
   rpc SetOsByID (SetByIdIn) returns (SetByIdOut){};
   rpc DeleteOsByID (DeleteByIdIn) returns (DeleteByIdOut){};
 
   rpc GetWorkPlaceBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetWorkPlacePreview (Empty) returns (GetPreviewOut){};
   rpc GetWorkPlaceById (GetByIdIn) returns (GetByIdOut){};
   rpc AddWorkPlace (AddIn) returns (AddOut){};
 
   rpc GetStudyPlaceBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetStudyPlacePreview (Empty) returns (GetPreviewOut){};
   rpc GetStudyPlaceById (GetByIdIn) returns (GetByIdOut){};
   rpc AddStudyPlace (AddIn) returns (AddOut){};
 
   rpc GetHobbyBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetHobbyPreview (Empty) returns (GetPreviewOut){};
   rpc GetHobbyById (GetByIdIn) returns (GetByIdOut){};
   rpc AddHobby (AddIn) returns (AddOut){};
 
   rpc GetSkillBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetSkillPreview (Empty) returns (GetPreviewOut){};
   rpc GetSkillById (GetByIdIn) returns (GetByIdOut){};
   rpc AddSkill (AddIn) returns (AddOut){};
 
   rpc GetCityBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetCityPreview (Empty) returns (GetPreviewOut){};
   rpc GetCityById (GetByIdIn) returns (GetByIdOut){};
   rpc AddCity (AddIn) returns (AddOut){};
 }
 
-message Empty {}
+message EmptyOptionhub {}
 
 message Record {
   int64 id = 1;
@@ -49,10 +43,6 @@ message GetByNameIn {
 }
 
 message GetByNameOut {
-  repeated Record values = 1;
-}
-
-message GetPreviewOut {
   repeated Record values = 1;
 }
 
