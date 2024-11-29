@@ -171,7 +171,7 @@ message response
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| values | [Record](#Record) | repeated |  |
+| options | [Record](#Record) | repeated |  |
 
 
 
@@ -187,7 +187,7 @@ message response
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [int64](#int64) |  |  |
-| name | [string](#string) |  |  |
+| label | [string](#string) |  |  |
 
 
 

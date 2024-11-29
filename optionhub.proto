@@ -35,7 +35,7 @@ message EmptyOptionhub {}
 
 message Record {
   int64 id = 1;
-  string name = 2;
+  string label = 2;
 }
 
 message GetByNameIn {
@@ -43,7 +43,7 @@ message GetByNameIn {
 }
 
 message GetByNameOut {
-  repeated Record values = 1;
+  repeated Record options = 1;
 }
 
 //message request
