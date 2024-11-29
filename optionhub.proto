@@ -11,24 +11,28 @@ service OptionhubService {
   rpc DeleteOsByID (DeleteByIdIn) returns (DeleteByIdOut){};
 
   rpc GetWorkPlaceBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetWorkPlaceById (GetByIdIn) returns (GetByIdOut){};
+  rpc GetWorkPlaceByID (GetByIdIn) returns (GetByIdOut){};
   rpc AddWorkPlace (AddIn) returns (AddOut){};
 
   rpc GetStudyPlaceBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetStudyPlaceById (GetByIdIn) returns (GetByIdOut){};
+  rpc GetStudyPlaceByID (GetByIdIn) returns (GetByIdOut){};
   rpc AddStudyPlace (AddIn) returns (AddOut){};
 
   rpc GetHobbyBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetHobbyById (GetByIdIn) returns (GetByIdOut){};
+  rpc GetHobbyByID (GetByIdIn) returns (GetByIdOut){};
   rpc AddHobby (AddIn) returns (AddOut){};
 
   rpc GetSkillBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetSkillById (GetByIdIn) returns (GetByIdOut){};
+  rpc GetSkillByID (GetByIdIn) returns (GetByIdOut){};
   rpc AddSkill (AddIn) returns (AddOut){};
 
   rpc GetCityBySearchName (GetByNameIn) returns (GetByNameOut){};
-  rpc GetCityById (GetByIdIn) returns (GetByIdOut){};
+  rpc GetCityByID (GetByIdIn) returns (GetByIdOut){};
   rpc AddCity (AddIn) returns (AddOut){};
+
+  rpc GetSocietyDirectionBySearchName (GetByNameIn) returns (GetByNameOut){};
+  rpc GetSocietyDirectionByID (GetByIdIn) returns (GetByIdOut){};
+  rpc addSocietyDirection (AddIn) returns (AddOut){};
 }
 
 message EmptyOptionhub {}
