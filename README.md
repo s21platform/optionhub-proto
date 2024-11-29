@@ -245,20 +245,23 @@ message response
 | SetOsByID | [.SetByIdIn](#SetByIdIn) | [.SetByIdOut](#SetByIdOut) |  |
 | DeleteOsByID | [.DeleteByIdIn](#DeleteByIdIn) | [.DeleteByIdOut](#DeleteByIdOut) |  |
 | GetWorkPlaceBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetWorkPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| GetWorkPlaceByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddWorkPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetStudyPlaceBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetStudyPlaceById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| GetStudyPlaceByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddStudyPlace | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetHobbyBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetHobbyById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| GetHobbyByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddHobby | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetSkillBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetSkillById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| GetSkillByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddSkill | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 | GetCityBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
-| GetCityById | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| GetCityByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
 | AddCity | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
+| GetSocietyDirectionBySearchName | [.GetByNameIn](#GetByNameIn) | [.GetByNameOut](#GetByNameOut) |  |
+| GetSocietyDirectionByID | [.GetByIdIn](#GetByIdIn) | [.GetByIdOut](#GetByIdOut) |  |
+| addSocietyDirection | [.AddIn](#AddIn) | [.AddOut](#AddOut) |  |
 
  
 
