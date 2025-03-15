@@ -1,0 +1,160 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: GetOsBySearchName-v0
+  description: Получение ОС по имени
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc GetOsBySearchName (GetByNameIn) returns (GetByNameOut){};
+    
+    message GetByNameIn {
+      string name = 1;
+    }
+      
+      message GetByNameOut {
+      repeated Record options = 1;
+    }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: GetOsByID-v0
+  description: Получение ОС по ID
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc GetOsByID (GetByIdIn) returns (GetByIdOut){};
+    
+    message GetByIdIn {
+      int64 id = 1;
+    }
+      
+    message GetByIdOut {
+      int64 id = 1;
+      string value = 2;
+    }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: GetAllOs-v0
+  description: Получение всех ОС
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc GetAllOs (EmptyOptionhub) returns (GetAllOut){};
+    
+    message EmptyOptionhub {}
+    
+    message GetAllOut {
+      repeated Record values = 1;
+    }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: AddOs-v0
+  description: Добавление новой ОС
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc AddOs (AddIn) returns (AddOut){};
+    
+    message AddIn {
+      string value = 1;
+    }
+
+    message AddOut {
+      int64 id = 1;
+      string value = 2;
+    }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: SetOsByID-v0
+  description: Обновление ОС по ID
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc SetOsByID (SetByIdIn) returns (SetByIdOut){};
+    
+    message SetByIdIn {
+      int64 id = 1;
+    }
+      
+    message SetByIdOut {
+      int64 id = 1;
+      string value = 2;
+    }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: DeleteOsByID-v0
+  description: Удаление ОС по ID
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc DeleteOsByID (DeleteByIdIn) returns (DeleteByIdOut){};
+    
+    message DeleteByIdIn {
+      int64 id = 1;
+    }
+      
+    message DeleteByIdOut {
+      bool ok = 1;
+    }
