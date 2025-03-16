@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "./optionhub/v8";
+
+service OptionhubService {
+  rpc SetAttributeByID (SetByIdIn) returns (EmptyOptionhub){};
+}
+
+message EmptyOptionhub {}
+
+//message request
+message SetByIdIn {
+  // id of the row in the db
+  int64 attribute_id = 1;
+  string value = 2;
+}
