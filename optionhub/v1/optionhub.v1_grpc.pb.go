@@ -2,12 +2,13 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v3.12.4
-// source: optionhub.v8.proto
+// source: optionhub.v1.proto
 
-package v8
+package v1
 
 import (
 	context "context"
+	empty "github.com/golang/protobuf/ptypes/empty"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
@@ -26,7 +27,7 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type OptionhubServiceClient interface {
-	SetAttributeByID(ctx context.Context, in *SetByIdIn, opts ...grpc.CallOption) (*EmptyOptionhub, error)
+	SetAttributeByID(ctx context.Context, in *SetAttributeByIdIn, opts ...grpc.CallOption) (*empty.Empty, error)
 }
 
 type optionhubServiceClient struct {
@@ -37,9 +38,9 @@ func NewOptionhubServiceClient(cc grpc.ClientConnInterface) OptionhubServiceClie
 	return &optionhubServiceClient{cc}
 }
 
-func (c *optionhubServiceClient) SetAttributeByID(ctx context.Context, in *SetByIdIn, opts ...grpc.CallOption) (*EmptyOptionhub, error) {
+func (c *optionhubServiceClient) SetAttributeByID(ctx context.Context, in *SetAttributeByIdIn, opts ...grpc.CallOption) (*empty.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(EmptyOptionhub)
+	out := new(empty.Empty)
 	err := c.cc.Invoke(ctx, OptionhubService_SetAttributeByID_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
@@ -51,7 +52,7 @@ func (c *optionhubServiceClient) SetAttributeByID(ctx context.Context, in *SetBy
 // All implementations must embed UnimplementedOptionhubServiceServer
 // for forward compatibility.
 type OptionhubServiceServer interface {
-	SetAttributeByID(context.Context, *SetByIdIn) (*EmptyOptionhub, error)
+	SetAttributeByID(context.Context, *SetAttributeByIdIn) (*empty.Empty, error)
 	mustEmbedUnimplementedOptionhubServiceServer()
 }
 
@@ -62,7 +63,7 @@ type OptionhubServiceServer interface {
 // pointer dereference when methods are called.
 type UnimplementedOptionhubServiceServer struct{}
 
-func (UnimplementedOptionhubServiceServer) SetAttributeByID(context.Context, *SetByIdIn) (*EmptyOptionhub, error) {
+func (UnimplementedOptionhubServiceServer) SetAttributeByID(context.Context, *SetAttributeByIdIn) (*empty.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetAttributeByID not implemented")
 }
 func (UnimplementedOptionhubServiceServer) mustEmbedUnimplementedOptionhubServiceServer() {}
@@ -87,7 +88,7 @@ func RegisterOptionhubServiceServer(s grpc.ServiceRegistrar, srv OptionhubServic
 }
 
 func _OptionhubService_SetAttributeByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SetByIdIn)
+	in := new(SetAttributeByIdIn)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -99,7 +100,7 @@ func _OptionhubService_SetAttributeByID_Handler(srv interface{}, ctx context.Con
 		FullMethod: OptionhubService_SetAttributeByID_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).SetAttributeByID(ctx, req.(*SetByIdIn))
+		return srv.(OptionhubServiceServer).SetAttributeByID(ctx, req.(*SetAttributeByIdIn))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -117,5 +118,5 @@ var OptionhubService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "optionhub.v8.proto",
+	Metadata: "optionhub.v1.proto",
 }

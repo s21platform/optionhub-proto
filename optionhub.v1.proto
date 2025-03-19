@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option go_package = "./optionhub/v1";
+
+import  "google/protobuf/empty.proto";
+
+service OptionhubService {
+  rpc SetAttributeByID (SetAttributeByIdIn) returns (google.protobuf.Empty){};
+}
+
+//message request
+message SetAttributeByIdIn  {
+  // id of the row in the db
+  int64 attribute_id = 1;
+  string value = 2;
+}
