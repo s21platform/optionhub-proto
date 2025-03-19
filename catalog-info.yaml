@@ -158,3 +158,27 @@ spec:
     message DeleteByIdOut {
       bool ok = 1;
     }
+
+---
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: SetAttributeByID-v1
+  description: Задание аттрибута по id
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc SetAttributeByID (SetAttributeByIdIn) returns (google.protobuf.Empty){};
+    
+    message SetAttributeByIdIn  {
+      int64 attribute_id = 1;
+      string value = 2;
+    }
