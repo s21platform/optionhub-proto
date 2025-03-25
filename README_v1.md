@@ -29,6 +29,7 @@ message request
 | ----- | ---- | ----- | ----------- |
 | attribute_id | [int64](#int64) |  | id of the row in the db |
 | value | [string](#string) |  |  |
+| parent_id | [int64](#int64) |  |  |
 
 
 
