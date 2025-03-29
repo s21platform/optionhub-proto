@@ -182,3 +182,32 @@ spec:
       int64 attribute_id = 1;
       string value = 2;
     }
+
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: GetOptionRequests-v1
+  description: Получения заявок на новые опции
+  annotations:
+    github.com/project-slug: s21platform/optionhub-proto
+  #    backstage.io/techdocs-ref: dir:.  # Если планируете использовать TechDocs
+  tags:
+    - proto
+spec:
+  type: grpc
+  lifecycle: production
+  owner: optionhub-service-team
+  definition: |
+    rpc GetOptionRequests (google.protobuf.Empty) returns (GetOptionRequestsOut){};
+    
+    message OptionRequestItem {
+      int64 option_request_id = 1;
+      string option_request_value = 2;
+      google.protobuf.Timestamp created_at = 3;
+      string attribute_value = 4;
+      string attribute_id = 5;
+    }
+    
+    message GetOptionRequestsOut {
+      repeated OptionRequestItem optionRequestItem= 1;
+    }
