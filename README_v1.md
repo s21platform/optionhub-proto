@@ -8,7 +8,7 @@
     - [OptionRequestItem](#-OptionRequestItem)
     - [SetAttributeByIdIn](#-SetAttributeByIdIn)
   
-    - [OptionhubService](#-OptionhubService)
+    - [OptionhubServiceV1](#-OptionhubServiceV1)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -79,9 +79,9 @@ message request
  
 
 
-<a name="-OptionhubService"></a>
+<a name="-OptionhubServiceV1"></a>
 
-### OptionhubService
+### OptionhubServiceV1
 
 
 | Method Name | Request Type | Response Type | Description |

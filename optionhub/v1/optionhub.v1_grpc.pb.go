@@ -20,139 +20,139 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	OptionhubService_SetAttributeByID_FullMethodName  = "/OptionhubService/SetAttributeByID"
-	OptionhubService_GetOptionRequests_FullMethodName = "/OptionhubService/GetOptionRequests"
+	OptionhubServiceV1_SetAttributeByID_FullMethodName  = "/OptionhubServiceV1/SetAttributeByID"
+	OptionhubServiceV1_GetOptionRequests_FullMethodName = "/OptionhubServiceV1/GetOptionRequests"
 )
 
-// OptionhubServiceClient is the client API for OptionhubService service.
+// OptionhubServiceV1Client is the client API for OptionhubServiceV1 service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type OptionhubServiceClient interface {
+type OptionhubServiceV1Client interface {
 	SetAttributeByID(ctx context.Context, in *SetAttributeByIdIn, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	GetOptionRequests(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*GetOptionRequestsOut, error)
 }
 
-type optionhubServiceClient struct {
+type optionhubServiceV1Client struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewOptionhubServiceClient(cc grpc.ClientConnInterface) OptionhubServiceClient {
-	return &optionhubServiceClient{cc}
+func NewOptionhubServiceV1Client(cc grpc.ClientConnInterface) OptionhubServiceV1Client {
+	return &optionhubServiceV1Client{cc}
 }
 
-func (c *optionhubServiceClient) SetAttributeByID(ctx context.Context, in *SetAttributeByIdIn, opts ...grpc.CallOption) (*emptypb.Empty, error) {
+func (c *optionhubServiceV1Client) SetAttributeByID(ctx context.Context, in *SetAttributeByIdIn, opts ...grpc.CallOption) (*emptypb.Empty, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(emptypb.Empty)
-	err := c.cc.Invoke(ctx, OptionhubService_SetAttributeByID_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, OptionhubServiceV1_SetAttributeByID_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *optionhubServiceClient) GetOptionRequests(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*GetOptionRequestsOut, error) {
+func (c *optionhubServiceV1Client) GetOptionRequests(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*GetOptionRequestsOut, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
 	out := new(GetOptionRequestsOut)
-	err := c.cc.Invoke(ctx, OptionhubService_GetOptionRequests_FullMethodName, in, out, cOpts...)
+	err := c.cc.Invoke(ctx, OptionhubServiceV1_GetOptionRequests_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// OptionhubServiceServer is the server API for OptionhubService service.
-// All implementations must embed UnimplementedOptionhubServiceServer
+// OptionhubServiceV1Server is the server API for OptionhubServiceV1 service.
+// All implementations must embed UnimplementedOptionhubServiceV1Server
 // for forward compatibility.
-type OptionhubServiceServer interface {
+type OptionhubServiceV1Server interface {
 	SetAttributeByID(context.Context, *SetAttributeByIdIn) (*emptypb.Empty, error)
 	GetOptionRequests(context.Context, *emptypb.Empty) (*GetOptionRequestsOut, error)
-	mustEmbedUnimplementedOptionhubServiceServer()
+	mustEmbedUnimplementedOptionhubServiceV1Server()
 }
 
-// UnimplementedOptionhubServiceServer must be embedded to have
+// UnimplementedOptionhubServiceV1Server must be embedded to have
 // forward compatible implementations.
 //
 // NOTE: this should be embedded by value instead of pointer to avoid a nil
 // pointer dereference when methods are called.
-type UnimplementedOptionhubServiceServer struct{}
+type UnimplementedOptionhubServiceV1Server struct{}
 
-func (UnimplementedOptionhubServiceServer) SetAttributeByID(context.Context, *SetAttributeByIdIn) (*emptypb.Empty, error) {
+func (UnimplementedOptionhubServiceV1Server) SetAttributeByID(context.Context, *SetAttributeByIdIn) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SetAttributeByID not implemented")
 }
-func (UnimplementedOptionhubServiceServer) GetOptionRequests(context.Context, *emptypb.Empty) (*GetOptionRequestsOut, error) {
+func (UnimplementedOptionhubServiceV1Server) GetOptionRequests(context.Context, *emptypb.Empty) (*GetOptionRequestsOut, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetOptionRequests not implemented")
 }
-func (UnimplementedOptionhubServiceServer) mustEmbedUnimplementedOptionhubServiceServer() {}
-func (UnimplementedOptionhubServiceServer) testEmbeddedByValue()                          {}
+func (UnimplementedOptionhubServiceV1Server) mustEmbedUnimplementedOptionhubServiceV1Server() {}
+func (UnimplementedOptionhubServiceV1Server) testEmbeddedByValue()                            {}
 
-// UnsafeOptionhubServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to OptionhubServiceServer will
+// UnsafeOptionhubServiceV1Server may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to OptionhubServiceV1Server will
 // result in compilation errors.
-type UnsafeOptionhubServiceServer interface {
-	mustEmbedUnimplementedOptionhubServiceServer()
+type UnsafeOptionhubServiceV1Server interface {
+	mustEmbedUnimplementedOptionhubServiceV1Server()
 }
 
-func RegisterOptionhubServiceServer(s grpc.ServiceRegistrar, srv OptionhubServiceServer) {
-	// If the following call pancis, it indicates UnimplementedOptionhubServiceServer was
+func RegisterOptionhubServiceV1Server(s grpc.ServiceRegistrar, srv OptionhubServiceV1Server) {
+	// If the following call pancis, it indicates UnimplementedOptionhubServiceV1Server was
 	// embedded by pointer and is nil.  This will cause panics if an
 	// unimplemented method is ever invoked, so we test this at initialization
 	// time to prevent it from happening at runtime later due to I/O.
 	if t, ok := srv.(interface{ testEmbeddedByValue() }); ok {
 		t.testEmbeddedByValue()
 	}
-	s.RegisterService(&OptionhubService_ServiceDesc, srv)
+	s.RegisterService(&OptionhubServiceV1_ServiceDesc, srv)
 }
 
-func _OptionhubService_SetAttributeByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _OptionhubServiceV1_SetAttributeByID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SetAttributeByIdIn)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OptionhubServiceServer).SetAttributeByID(ctx, in)
+		return srv.(OptionhubServiceV1Server).SetAttributeByID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: OptionhubService_SetAttributeByID_FullMethodName,
+		FullMethod: OptionhubServiceV1_SetAttributeByID_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).SetAttributeByID(ctx, req.(*SetAttributeByIdIn))
+		return srv.(OptionhubServiceV1Server).SetAttributeByID(ctx, req.(*SetAttributeByIdIn))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _OptionhubService_GetOptionRequests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _OptionhubServiceV1_GetOptionRequests_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(OptionhubServiceServer).GetOptionRequests(ctx, in)
+		return srv.(OptionhubServiceV1Server).GetOptionRequests(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: OptionhubService_GetOptionRequests_FullMethodName,
+		FullMethod: OptionhubServiceV1_GetOptionRequests_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(OptionhubServiceServer).GetOptionRequests(ctx, req.(*emptypb.Empty))
+		return srv.(OptionhubServiceV1Server).GetOptionRequests(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// OptionhubService_ServiceDesc is the grpc.ServiceDesc for OptionhubService service.
+// OptionhubServiceV1_ServiceDesc is the grpc.ServiceDesc for OptionhubServiceV1 service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var OptionhubService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "OptionhubService",
-	HandlerType: (*OptionhubServiceServer)(nil),
+var OptionhubServiceV1_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "OptionhubServiceV1",
+	HandlerType: (*OptionhubServiceV1Server)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "SetAttributeByID",
-			Handler:    _OptionhubService_SetAttributeByID_Handler,
+			Handler:    _OptionhubServiceV1_SetAttributeByID_Handler,
 		},
 		{
 			MethodName: "GetOptionRequests",
-			Handler:    _OptionhubService_GetOptionRequests_Handler,
+			Handler:    _OptionhubServiceV1_GetOptionRequests_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
