@@ -48,7 +48,8 @@ Describe
 | option_request_value | [string](#string) |  | value of requested option |
 | created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | time of create note |
 | attribute_value | [string](#string) |  | value of attribute where option requested in |
-| attribute_id | [string](#string) |  | id of requested attribute |
+| attribute_id | [int64](#int64) |  | id of requested attribute |
+| user_uuid | [string](#string) |  | user_uuid for ban |
 
 
 

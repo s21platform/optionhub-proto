@@ -29,7 +29,9 @@ message OptionRequestItem {
   // value of attribute where option requested in
   string attribute_value = 4;
   // id of requested attribute
-  string attribute_id = 5;
+  int64 attribute_id = 5;
+  // user_uuid for ban
+  string user_uuid = 6;
 }
 
 // message response with requested options
