@@ -4,9 +4,11 @@
 ## Table of Contents
 
 - [optionhub.v1.proto](#optionhub-v1-proto)
+    - [GetOptionRequestsOut](#-GetOptionRequestsOut)
+    - [OptionRequestItem](#-OptionRequestItem)
     - [SetAttributeByIdIn](#-SetAttributeByIdIn)
   
-    - [OptionhubService](#-OptionhubService)
+    - [OptionhubServiceV1](#-OptionhubServiceV1)
   
 - [new_attribute.proto](#new_attribute-proto)
     - [SetNewAttribute](#-SetNewAttribute)
@@ -19,6 +21,41 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## optionhub.v1.proto
+
+
+
+<a name="-GetOptionRequestsOut"></a>
+
+### GetOptionRequestsOut
+message response with requested options
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| optionRequestItem | [OptionRequestItem](#OptionRequestItem) | repeated | array of items |
+
+
+
+
+
+
+<a name="-OptionRequestItem"></a>
+
+### OptionRequestItem
+Describe
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| option_request_id | [int64](#int64) |  | id of requested note in db |
+| option_request_value | [string](#string) |  | value of requested option |
+| created_at | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  | time of create note |
+| attribute_value | [string](#string) |  | value of attribute where option requested in |
+| attribute_id | [int64](#int64) |  | id of requested attribute |
+| user_uuid | [string](#string) |  | user_uuid for ban |
+
+
+
 
 
 
@@ -45,14 +82,15 @@ message request
  
 
 
-<a name="-OptionhubService"></a>
+<a name="-OptionhubServiceV1"></a>
 
-### OptionhubService
+### OptionhubServiceV1
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | SetAttributeByID | [.SetAttributeByIdIn](#SetAttributeByIdIn) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| GetOptionRequests | [.google.protobuf.Empty](#google-protobuf-Empty) | [.GetOptionRequestsOut](#GetOptionRequestsOut) |  |
 
  
 
