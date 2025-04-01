@@ -8,6 +8,9 @@
   
     - [OptionhubService](#-OptionhubService)
   
+- [new_attribute.proto](#new_attribute-proto)
+    - [SetNewAttribute](#-SetNewAttribute)
+  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -50,6 +53,37 @@ message request
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | SetAttributeByID | [.SetAttributeByIdIn](#SetAttributeByIdIn) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+
+ 
+
+
+
+<a name="new_attribute-proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## new_attribute.proto
+
+
+
+<a name="-SetNewAttribute"></a>
+
+### SetNewAttribute
+message request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| attribute_id | [int64](#int64) |  | id of the row in the db |
+
+
+
+
+
+ 
+
+ 
+
+ 
 
  
 
