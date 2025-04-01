@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "./optionhub/set_new_attribute";
+
+import  "google/protobuf/empty.proto";
+
+// Kafka message
+message SetNewAttribute  {
+// id of the row in the db
+  int64 attribute_id = 1;
+}
