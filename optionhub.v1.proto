@@ -8,6 +8,26 @@ import  "google/protobuf/timestamp.proto";
 service OptionhubServiceV1 {
   rpc SetAttributeByID (SetAttributeByIdIn) returns (google.protobuf.Empty){};
   rpc GetOptionRequests (google.protobuf.Empty) returns (GetOptionRequestsOut){};
+  rpc GetAttributeValues (GetAttributeValuesIn) returns (GetAttributeValuesOut){};
+}
+
+message Option {
+  //id of the attribute option
+  int64 option_id = 1;
+  //value of the attribute option
+  string option_value = 2;
+  //option that inherits from this option
+  repeated Option children = 3;
+}
+
+message GetAttributeValuesIn {
+  //id of the attribute
+  int64 attribute_id = 1;
+}
+
+message GetAttributeValuesOut {
+  //attribute values trees
+  repeated Option option_list = 1;
 }
 
 // message request
