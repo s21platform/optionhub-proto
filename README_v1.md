@@ -4,7 +4,10 @@
 ## Table of Contents
 
 - [optionhub.v1.proto](#optionhub-v1-proto)
+    - [GetAttributeValuesIn](#-GetAttributeValuesIn)
+    - [GetAttributeValuesOut](#-GetAttributeValuesOut)
     - [GetOptionRequestsOut](#-GetOptionRequestsOut)
+    - [Option](#-Option)
     - [OptionRequestItem](#-OptionRequestItem)
     - [SetAttributeByIdIn](#-SetAttributeByIdIn)
   
@@ -24,6 +27,36 @@
 
 
 
+<a name="-GetAttributeValuesIn"></a>
+
+### GetAttributeValuesIn
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| attribute_id | [int64](#int64) |  | id of the attribute |
+
+
+
+
+
+
+<a name="-GetAttributeValuesOut"></a>
+
+### GetAttributeValuesOut
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| option_list | [Option](#Option) | repeated | attribute values trees |
+
+
+
+
+
+
 <a name="-GetOptionRequestsOut"></a>
 
 ### GetOptionRequestsOut
@@ -33,6 +66,23 @@ message response with requested options
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | optionRequestItem | [OptionRequestItem](#OptionRequestItem) | repeated | array of items |
+
+
+
+
+
+
+<a name="-Option"></a>
+
+### Option
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| option_id | [int64](#int64) |  | id of the attribute option |
+| option_value | [string](#string) |  | value of the attribute option |
+| children | [Option](#Option) | repeated | option that inherits from this option |
 
 
 
@@ -91,6 +141,7 @@ message request
 | ----------- | ------------ | ------------- | ------------|
 | SetAttributeByID | [.SetAttributeByIdIn](#SetAttributeByIdIn) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | GetOptionRequests | [.google.protobuf.Empty](#google-protobuf-Empty) | [.GetOptionRequestsOut](#GetOptionRequestsOut) |  |
+| GetAttributeValues | [.GetAttributeValuesIn](#GetAttributeValuesIn) | [.GetAttributeValuesOut](#GetAttributeValuesOut) |  |
 
  
 
