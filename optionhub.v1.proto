@@ -6,7 +6,7 @@ import  "google/protobuf/empty.proto";
 import  "google/protobuf/timestamp.proto";
 
 service OptionhubServiceV1 {
-  rpc SetAttributeByID (SetAttributeByIdIn) returns (google.protobuf.Empty){};
+  rpc AddAttributeValue (AddAttributeValueIn) returns (google.protobuf.Empty){};
   rpc GetOptionRequests (google.protobuf.Empty) returns (GetOptionRequestsOut){};
   rpc GetAttributeValues (GetAttributeValuesIn) returns (GetAttributeValuesOut){};
 }
@@ -31,7 +31,7 @@ message GetAttributeValuesOut {
 }
 
 // message request
-message SetAttributeByIdIn  {
+message AddAttributeValueIn  {
   // id of the row in the db
   int64 attribute_id = 1;
   string value = 2;
