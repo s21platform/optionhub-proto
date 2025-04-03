@@ -35,7 +35,7 @@ message AddAttributeValueIn  {
   // id of the row in the db
   int64 attribute_id = 1;
   string value = 2;
-  int64 parent_id = 3;
+  optional int64 parent_id = 3;
 }
 
 // Describe
