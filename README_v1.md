@@ -4,9 +4,9 @@
 ## Table of Contents
 
 - [optionhub.v1.proto](#optionhub-v1-proto)
+    - [AddAttributeValueIn](#-AddAttributeValueIn)
     - [GetOptionRequestsOut](#-GetOptionRequestsOut)
     - [OptionRequestItem](#-OptionRequestItem)
-    - [SetAttributeByIdIn](#-SetAttributeByIdIn)
   
     - [OptionhubServiceV1](#-OptionhubServiceV1)
   
@@ -21,6 +21,23 @@
 <p align="right"><a href="#top">Top</a></p>
 
 ## optionhub.v1.proto
+
+
+
+<a name="-AddAttributeValueIn"></a>
+
+### AddAttributeValueIn
+message request
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| attribute_id | [int64](#int64) |  | id of the row in the db |
+| value | [string](#string) |  |  |
+| parent_id | [int64](#int64) |  |  |
+
+
+
 
 
 
@@ -58,23 +75,6 @@ Describe
 
 
 
-
-<a name="-SetAttributeByIdIn"></a>
-
-### SetAttributeByIdIn
-message request
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| attribute_id | [int64](#int64) |  | id of the row in the db |
-| value | [string](#string) |  |  |
-| parent_id | [int64](#int64) |  |  |
-
-
-
-
-
  
 
  
@@ -89,7 +89,7 @@ message request
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| SetAttributeByID | [.SetAttributeByIdIn](#SetAttributeByIdIn) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
+| AddAttributeValue | [.AddAttributeValueIn](#AddAttributeValueIn) | [.google.protobuf.Empty](#google-protobuf-Empty) |  |
 | GetOptionRequests | [.google.protobuf.Empty](#google-protobuf-Empty) | [.GetOptionRequestsOut](#GetOptionRequestsOut) |  |
 
  
@@ -106,7 +106,7 @@ message request
 <a name="-SetNewAttribute"></a>
 
 ### SetNewAttribute
-message request
+Kafka message
 
 
 | Field | Type | Label | Description |
